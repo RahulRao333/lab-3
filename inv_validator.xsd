@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="inventory-management">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="storage" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="pid" type="xs:int"/>
+                            <xs:element name="pname" type="xs:string"/>
+                            <xs:element name="p_postion" type="xs:string"/>
+                            <xs:element name="q_instock" type="xs:int"/>
+
+
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+                <xs:element name="vendor" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="phoneno" type="xs:long"/>
+                            <xs:element name="id" type="xs:int"/>
+                            <xs:element name="name" type="xs:string"/>
+
+                        </xs:sequence>
+                    </xs:complexType>
+
+                </xs:element>
+                <xs:element name="products" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="pquantity">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:integer">
+                                        <xs:minInclusive value="0"/>
+                                        <xs:maxInclusive value="100"/>
+
+                                    </xs:restriction>
+
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="pname" type="xs:string"/>
+                            <xs:element name="pid" type="xs:int"/>
+                            
+                            
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+        
+    </xs:element>
+    
+</xs:schema>
